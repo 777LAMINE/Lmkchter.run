@@ -1,0 +1,139 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #5a72d3;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+}
+
+#start-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #f94d4d;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#start-btn:hover {
+  background: #e1827a;
+}
+
+#game-container {
+  position: relative;
+  height: 500px;
+  width: 900px;
+  background: url("./assets/background.png");
+  background-size: cover;
+  background-position: bottom;
+  background-position-y: -95px;
+  display: none;
+  overflow: hidden;
+}
+
+.hider {
+  height: 50px;
+  width: 60px;
+  background-color: #6B88FE;
+  position: absolute;
+  margin-top: 418px;
+  margin-left: 54%;
+  border-radius: 40%;
+}
+
+#score {
+  position: fixed;
+  top: 10px;
+  right: 40px;
+  font-size: 40px;
+  color: #ffffff;
+  border: 2px solid grey;
+  background-color: rgb(14, 14, 83);
+  border-radius: 10px;
+  padding: 5px 15px;
+  z-index: 1000;
+}
+
+#mario {
+  position: absolute;
+  bottom: 32px;
+  left: 50px;
+  height: 100px;
+  transition: all 0.2s;
+}
+
+.obstacle {
+  position: absolute;
+  bottom: 35px;
+  width: 60px;
+  transition: all 0.3s;
+  display: none;
+}
+
+.flipped {
+  transform: scaleX(-1);
+  transition: all 0s;
+}
+
+#mushroom {
+  width: 80px;
+  bottom: 10px;
+}
+
+/* أزرار اللمس */
+.touch-controls {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.touch-controls button {
+  padding: 15px 25px;
+  font-size: 24px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  #game-container {
+    width: 100vw;
+    height: 70vh;
+    background-position-y: -60px;
+  }
+
+  #mario {
+    height: 80px;
+  }
+
+  .obstacle {
+    width: 50px;
+  }
+
+  #score {
+    font-size: 28px;
+    top: 5px;
+    right: 10px;
+  }
+}
